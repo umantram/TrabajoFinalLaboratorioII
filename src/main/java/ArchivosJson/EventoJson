@@ -1,0 +1,39 @@
+{
+  "nombre":"limpiar la casa",
+  "descripcion":"la casa esta muy sucia",
+  "color":"rojo",
+  "fechaInicio":{
+    "dia":"5",
+    "mes":"1",
+    "anio":"2016",
+    "hora":"2",
+    "minuto":"20"
+  },
+  "fechaFin":{
+    "dia":"15",
+    "mes":"02",
+    "anio":"2017",
+    "hora":"5",
+    "minuto":"30"
+  },
+  "idCalendario":"1",
+
+  "nombre":"limpiar la casa",
+  "descripcion":"la casa esta muy sucia",
+  "color":"rojo",
+  "fechaInicio":{
+    "dia":"31",
+    "mes":"06",
+    "anio":"2016",
+    "hora":"2",
+    "minuto":"20"
+  },
+  "fechaFin":{
+    "dia":"15",
+    "mes":"02",
+    "anio":"2017",
+    "hora":"5",
+    "minuto":"30"
+  },
+  "idCalendario":"1"
+}

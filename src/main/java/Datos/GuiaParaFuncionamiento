@@ -1,0 +1,92 @@
+Esta la guia para un correcto funcionamiento
+
+1- Se Cargan 3 datos
+
+Usuario;
+
+    Desde la Clase UsuarioManejoDatos se instancia la Clase Usaurio
+            Usuario usuario1 = new Usuario(contador.incrementAndGet(), "Andres", "umantram");
+
+    Se consulta la instancia desde
+            http://localhost:8080/usuarios
+    Que muestra todos los usuarios
+
+    Para consultas un usuario en particular se consulta
+            http://localhost:8080/usuarios/1
+    siendo 1 el id del usuario
+
+Calendario:
+
+    Desde la Clase CalendarioManejoDatos se instancia la Clase Calendario
+            Calendario calen1 = new Calendario(contador.incrementAndGet(), "oficina", 1);
+
+    Se consulta esta Instancia desde
+            http://localhost:8080/calendario
+    Que muestra todos los calendarios
+
+    Para consultar un calendario en particular se consulta
+            http://localhost:8080/calendario/1
+    siendo 1 el id del calendario
+
+Evento:
+
+    Desde la Clase EventoManejoDatos se instancia la Clase Evento
+            Evento evento1 = new Evento(contador.incrementAndGet(), "limpiar" , "Tengo que limpiar mi Pieza", "Rojo",
+                                        new Fecha(10,01,2016,20,30), new Fecha(10,01,2016,21,30),1);
+    Se consulta esta Instancia desde
+            http://localhost:8080/evento
+    Que muestra todos los evento
+
+    Para consultar un evento en particular se consulta
+            http://localhost:8080/evento/1
+    siendo 1 el id del evento
+
+
+2- Pasos a Seguir:
+
+    Cargar un Nuevo Usuario
+            http://localhost:8080/usuario/alta
+            json:
+            {
+              "nombre":"Franco Moglia",
+              "email":"framco@gmail.com"
+            }
+
+    Cargar un Calendario a este usuario previamente cargado
+            http://localhost:8080/usuario/2/alta
+            json
+            {
+              "nombre":"Calendario 2016",
+            }
+
+    Cargar eventos al Calendario previamente cargado
+            http://localhost:8080/calendario/1/altaevento
+            json
+            {
+              "nombre":"limpiar la casa",
+              "descripcion":"la casa esta muy sucia",
+              "color":"rojo",
+              "fechaInicio":{
+                "dia":"5",
+                "mes":"1",
+                "anio":"2016",
+                "hora":"2",
+                "minuto":"20"
+              },
+              "fechaFin":{
+                "dia":"15",
+                "mes":"02",
+                "anio":"2017",
+                "hora":"5",
+                "minuto":"30"
+              },
+            }
+
+    Consultar los Eventos de Un Calendario
+            http://localhost:8080/calendario/1/evento
+
+    Consultar por fecha
+            http://localhost:8080/evento/listadoFecha?fecha=10/01/2016
+
+    Consultar por fecha desde y hasta
+            http://localhost:8080/evento/listadoFecha?fechadesde=01/01/2016&fechahasta=16/01/2016
