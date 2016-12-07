@@ -1,11 +1,7 @@
 package com.labii;
 
 import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by francomoglia on 12/3/16.
@@ -15,7 +11,7 @@ public class UsuarioTest extends TestCase{
     @Test
     public void testUsuario() throws Exception{
 
-        /*
+        /**
             CREAMOS TRES INSTANCIAS DE LA CLASE USUARIO,
             CON LOS RESPECTIVOS VALORES DEL CONSTRUCTOR
          */
@@ -24,7 +20,7 @@ public class UsuarioTest extends TestCase{
         Usuario usuario3 = new Usuario(456, "roberto", "elquetedejo...@yaju.com");
 
 
-        /*
+        /**
         *   REALIZAMOS EL TEST SOBRE EL METODO getIdUsuario()
         * */
         assertEquals(usuario1.getIdUsuario(), 0);
@@ -32,7 +28,7 @@ public class UsuarioTest extends TestCase{
         assertEquals(usuario3.getIdUsuario(), 456);
 
 
-        /*
+        /**
         *   IDEM ANTERIOR
         *   TEST getEmail()
         * */
@@ -40,7 +36,7 @@ public class UsuarioTest extends TestCase{
         assertEquals(usuario2.getEmail(), "pepelotas@gmail.com");
         assertEquals(usuario3.getEmail(), "elquetedejo...@yaju.com");
 
-        /*
+        /**
         *   IDEM ANTERIOR
         *   TEST getNombre()
         * */
@@ -49,7 +45,7 @@ public class UsuarioTest extends TestCase{
         assertEquals(usuario3.getNombre(), "roberto");
 
 
-        /*
+        /**
         *   SETEAMOS VALORES CON EL METODO setNombre()
         *   PARA LUEGO COMPROBAR SI SU FUNCIONAMIENTO
         *   ES CORRECTO.
@@ -58,7 +54,7 @@ public class UsuarioTest extends TestCase{
         usuario2.setNombre("raul");
         usuario3.setNombre("alberto");
 
-        /*
+        /**
         *   TEST DE FUNCIONAMINETO METODO setNombre()
         * */
         assertEquals(usuario1.getNombre(), "carlos");
@@ -66,7 +62,7 @@ public class UsuarioTest extends TestCase{
         assertEquals(usuario3.getNombre(), "alberto");
 
 
-        /*
+        /**
         *   IDEM ANTERIOR
         *   TEST setEmail()
         * */
@@ -75,7 +71,7 @@ public class UsuarioTest extends TestCase{
         usuario3.setEmail("albertito@algo.com");
 
 
-        /*
+        /**
         *   TEST DE FUNCIONAMIENTO setEmail()
         * */
         assertEquals(usuario1.getEmail(), "carlitos@algo.com");

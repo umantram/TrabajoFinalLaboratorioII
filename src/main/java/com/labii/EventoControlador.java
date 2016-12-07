@@ -49,7 +49,7 @@ public class EventoControlador {
      *
      * Este metodo devuelve una Collection de Eventos.
      */
-    @RequestMapping(value = "/evento/listadoFecha", method = RequestMethod.GET, params={"fecha"})
+    @RequestMapping(value = "/evento/listadofecha", method = RequestMethod.GET, params={"fecha"})
     public Collection<Evento> getEventoFecha(@RequestParam("fecha") String fecha ) throws ParseException {
 
         return EventoManejoDatos.listaEventosPorFecha(fecha);
@@ -67,7 +67,7 @@ public class EventoControlador {
      *
      * Este metodo devuelve una Collection de Eventos.
      */
-    @RequestMapping(value = "/evento/listadoFecha", method = RequestMethod.GET, params={"fechadesde", "fechahasta"})
+    @RequestMapping(value = "/evento/listadofecha", method = RequestMethod.GET, params={"fechadesde", "fechahasta"})
     public Collection<Evento> getEventoFechaDesdeHasta(@RequestParam("fechadesde") String fechaDesde,
                                                        @RequestParam("fechahasta") String fechaHasta ) throws ParseException {
 

@@ -37,6 +37,8 @@ public class Evento {
         this.fechaFin = fechaFin;
         this.color = color;
 
+        this.idCalendario = idCalendario;
+
         //System.out.println(this.calendario.getNombre());
     }
 

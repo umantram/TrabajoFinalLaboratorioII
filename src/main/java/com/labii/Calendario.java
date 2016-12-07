@@ -30,7 +30,7 @@ public class Calendario {
         this.idCalendario = idCalendario;
         this.nombre = nombre;
         this.usuario = UsuarioManejoDatos.getUsuario(idUsuario);
-
+        this.idUsuario = idUsuario;
     }
 
     /**

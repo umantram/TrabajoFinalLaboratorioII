@@ -1,11 +1,7 @@
 package com.labii;
 
 import junit.framework.TestCase;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by francomoglia on 12/3/16.
@@ -22,7 +18,7 @@ public class EventoTest extends TestCase {
         Evento evento3 = new Evento(2,"Evento3", "lalala", "verde",
                 new Fecha(3, 12, 2016, 1,56), new Fecha(4,12,2017,1,57),1);
 
-        /*
+        /**
         *    TEST SOBRE METODO getIdEvento()
         * */
         assertEquals(evento1.getIdEvento(), 0);
@@ -30,28 +26,28 @@ public class EventoTest extends TestCase {
         assertEquals(evento3.getIdEvento(), 2);
 
 
-        /*
+        /**
         *   TEST SOBRE METODO getNombre()
         * */
         assertEquals(evento1.getNombre(), "Evento1");
         assertEquals(evento2.getNombre(), "Evento2");
         assertEquals(evento3.getNombre(), "Evento3");
 
-        /*
+        /**
         *   TEST SOBRE METODO getIdCalendario()
         * */
-        assertEquals(evento1.getIdCalendario(), 0);
-        assertEquals(evento2.getIdCalendario(), 0);
+        assertEquals(evento1.getIdCalendario(), 1);
+        assertEquals(evento2.getIdCalendario(), 1);
         assertEquals(evento3.getIdCalendario(), 1);
 
-        /*
+        /**
         *   TEST SOBRE METODO getDescripcion()
         * */
         assertEquals(evento1.getDescripcion(), "lalala");
         assertEquals(evento2.getDescripcion(), "lalala");
         assertEquals(evento3.getDescripcion(), "lalala");
 
-        /*
+        /**
         *   TEST DE LOS METODOS SET
         * */
 
@@ -62,7 +58,7 @@ public class EventoTest extends TestCase {
         evento3.setNombre("nada");
         evento3.setDescripcion("alla");
 
-        /*
+        /**
         *   LLAMAMOS A LOS METODOS GET, PARA COMPROBAR
         *   QUE LOS SET ANTERIORES FUNCIONARON
         * */
