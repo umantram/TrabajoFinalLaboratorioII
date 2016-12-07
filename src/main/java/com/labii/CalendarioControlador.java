@@ -10,11 +10,11 @@ import java.util.Collection;
 
     /*
     *   En el enfoque de Spring para la creación de servicios web RESTful,
-    *   las solicitudes HTTP son manejadas por un controlador. Estos componentes se identifican f
-    *   ácilmente mediante la anotación @RestController
+    *   las solicitudes HTTP son manejadas por un controlador. Estos componentes se identifican
+    *   fácilmente mediante la anotación @RestController
     */
-    @RestController
-    public class CalendarioControlador {
+@RestController
+public class CalendarioControlador {
 
     /**
      * GET
@@ -143,7 +143,7 @@ import java.util.Collection;
     /**
      * PUT
      *
-     * Almacene una entidad en un URI. PUT puede crear una nueva entidad o actualizar una existente.
+     * PUT puede crear una nueva entidad o actualizar una existente.
      * Una solicitud PUT es idempotent. Idempotencia es la principal diferencia entre las expectativas de PUT
      * versus una solicitud POST.
      *
@@ -158,7 +158,7 @@ import java.util.Collection;
      * La anotación del parámetro del método @RequestBody debe enlazar el valor json en el cuerpo de la
      * petición HTTP al objeto java usando un HttpMessageConverter, En este caso la Clase Calendario
      *
-     * Llama al Metodo bajaCalendario() que se encuentra dentro de la Clase CalendarioManejoDatos.
+     * Llama al Metodo modificarCalendario() que se encuentra dentro de la Clase CalendarioManejoDatos.
      */
 
     @RequestMapping(value = "/calendario/{idCalendario}/modificar", method = RequestMethod.PUT)
