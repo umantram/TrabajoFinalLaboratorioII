@@ -58,6 +58,22 @@ public class CalendarioManejoDatos {
     }
 
     /**
+     * Metodo que devuelve una Collection Calendarios que corresponda al idUsuario que se le pasa como Parametro.
+     */
+    public static Collection<Calendario> listaCalendariosPorIdUsuario(Integer idUsuario){
+
+        HashMap<Integer, Calendario> resul = new HashMap<Integer, Calendario>();
+
+        for (Calendario list : listaCalendarios.values()){
+
+            if (list.getUsuario().getIdUsuario()  == idUsuario){
+                resul.put(list.getidCalendario(), list);
+            }
+        }
+
+        return resul.values();
+    }
+    /**
      * Metodo que genera una nueva Instancia de Calendario, y lo agrega al hashMap
      * los datos que se le pasa por parametros son los Atributos de la Clase.
      */

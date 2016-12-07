@@ -4,6 +4,8 @@ package com.labii;
  * Created by francomoglia on 11/28/16.
  */
 
+import Exception.CustomExceptionUsuario;
+
 public class Fecha {
 
     //      ATRIBUTOS
@@ -63,7 +65,7 @@ public class Fecha {
 
         if (mes > 0 && mes <= 12){
             this.mes = mes;
-        }else throw new Exception.CustomExceptionUsuario("Mes invalido");
+        }else throw new CustomExceptionUsuario("Mes invalido");
 
 
         /*
@@ -72,19 +74,19 @@ public class Fecha {
         if (mes31Dias()){
             if (dia > 0 && dia <= 31){
                 this.dia = dia;
-            }else throw new Exception.CustomExceptionUsuario("Dia Invalido, el mes ingresado solo tiene 31 dias");
+            }else throw new CustomExceptionUsuario("Dia Invalido, el mes ingresado solo tiene 31 dias");
         }else if (mes30Dias()){
             if (dia > 0 && dia < 31){
                 this.dia = dia;
-            }else throw new Exception.CustomExceptionUsuario("Dia invalido, el mes ingresado solo tiene 30 dias");
+            }else throw new CustomExceptionUsuario("Dia invalido, el mes ingresado solo tiene 30 dias");
         }else if (febrero29Dias()){
             if (dia > 0 && dia < 30){
                 this.dia = dia;
-            }else throw new Exception.CustomExceptionUsuario("Dia invalido, año bisiesto, febrero solo tiene 29 dias");
+            }else throw new CustomExceptionUsuario("Dia invalido, año bisiesto, febrero solo tiene 29 dias");
         }else if (febrero28Dias()){
             if (dia > 0 && dia < 29){
                 this.dia = dia;
-            }else throw new Exception.CustomExceptionUsuario("Dia invalido, no es año bisiesto, febrero solo tiene 28 días");
+            }else throw new CustomExceptionUsuario("Dia invalido, no es año bisiesto, febrero solo tiene 28 días");
         }
 
         if (hora >= 0 && hora < 24) {
@@ -105,7 +107,7 @@ public class Fecha {
 
         if (anio >= 1950 && anio <= 2050){
             this.anio = anio;
-        }else throw new Exception.CustomExceptionUsuario("Año incorrecto");
+        }else throw new CustomExceptionUsuario("Año incorrecto");
 
 
     }

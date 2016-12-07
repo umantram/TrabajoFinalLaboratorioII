@@ -58,6 +58,37 @@ public class UsuarioControlador {
         }
 
         /**
+        * La anotación @RequestMapping asegura que las peticiones HTTP/usuario/{idUsuario}/calendario están asignadas
+        * al método getUsuarioPorID().
+        *
+        * La anotacion @PathVariable identifica el patrón que se utiliza en el URI para la solicitud entrante, idUsuario
+        *
+        * Llama al Metodo listaCalendariosPorIdUsuario() que nesecita como parametro idUsuario,
+        * que se encuentra dentro de la Clase CalendarioManejoDatos.
+        *
+         * Este metodo devuelve una Collection de Calendario.
+        */
+        @RequestMapping(value = "/usuario/{idUsuario}/calendario", method = RequestMethod.GET)
+        public Collection<Calendario> getUsuarioCalendarioPorID(@PathVariable("idUsuario") int idUsuario){
+            return CalendarioManejoDatos.listaCalendariosPorIdUsuario(idUsuario);
+        }
+
+        /**
+        * La anotación @RequestMapping asegura que las peticiones HTTP/usuario/{idUsuario}/{idCalendario}/evento están asignadas
+        * al método getEventosPorIDCalendario().
+        *
+        * La anotacion @PathVariable identifica el patrón que se utiliza en el URI para la solicitud entrante, idCalendario
+        *
+        * Llama al Metodo listaEventosPorIDCalendario() que nesecita como parametro idCalendario,
+        * que se encuentra dentro de la Clase EventoManejoDatos.
+        *
+        * Este metodo devuelve una Collection de Evento.
+        */
+        @RequestMapping(value = "/usuario/{idUsuario}/{idCalendario}/evento", method = RequestMethod.GET)
+        public Collection<Evento> getEventosPorIDCalendario(@PathVariable("idCalendario") Integer idCalendario){
+            return EventoManejoDatos.listaEventosPorIDCalendario(idCalendario) ;
+        }
+        /**
          * POST
          * Solicitar que el recurso en el URI haga algo con la entidad proporcionada.
          * A menudo, POST se utiliza para crear una nueva entidad, pero también se puede utilizar para actualizar una entidad.
@@ -90,7 +121,7 @@ public class UsuarioControlador {
          *
          * Llama al Metodo altaCalendario() que se encuentra dentro de la Clase CalendarioManejoDatos.
          */
-        @RequestMapping(value = "/usuario/{idUsuario}/altaCalendario", method = RequestMethod.POST)
+        @RequestMapping(value = "/usuario/{idUsuario}/altacalendario", method = RequestMethod.POST)
         public void altaCalendarioUsaurio(@PathVariable("idUsuario") int idUsuario, @RequestBody Calendario calendario){
 
             CalendarioManejoDatos.altaCalendario(calendario.getNombre(), idUsuario);
@@ -110,7 +141,7 @@ public class UsuarioControlador {
          * Llama al Metodo altaEvento() que se encuentra dentro de la Clase EventoManejoDatos.
          */
 
-        @RequestMapping(value = "/usuario/{idUsuario}/{idCalendario}/altaEvento", method = RequestMethod.POST)
+        @RequestMapping(value = "/usuario/{idUsuario}/{idCalendario}/altaevento", method = RequestMethod.POST)
         public void altaEventoCalendarioUsuario(@PathVariable("idCalendario") int idCalendario,
                                                 @PathVariable("idUsuario") int idUsario,
                                                 @RequestBody Evento evento){
@@ -119,7 +150,7 @@ public class UsuarioControlador {
                     evento.getFechaInicio().getDia(), evento.getFechaInicio().getMes(),
                     evento.getFechaInicio().getAnio(), evento.getFechaInicio().getHora(),
                     evento.getFechaInicio().getMinutos(),
-                    evento.getFechaFin() .getDia(), evento.getFechaFin().getMes(),
+                    evento.getFechaFin().getDia(), evento.getFechaFin().getMes(),
                     evento.getFechaFin().getAnio(), evento.getFechaFin().getHora(),
                     evento.getFechaFin().getMinutos(),
                     idCalendario);

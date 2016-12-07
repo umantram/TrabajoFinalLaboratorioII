@@ -53,10 +53,10 @@ Evento:
             }
 
     Cargar un Calendario a este usuario previamente cargado
-            http://localhost:8080/usuario/2/alta
+            http://localhost:8080/usuario/2/altacalendario
             json
             {
-              "nombre":"Calendario 2016",
+              "nombre":"Calendario 2016"
             }
 
     Cargar eventos al Calendario previamente cargado
@@ -79,11 +79,26 @@ Evento:
                 "anio":"2017",
                 "hora":"5",
                 "minuto":"30"
-              },
+              }
             }
 
+    Consultar los Calendarios de un Usuario
+        /usuario/{idUsuario}/calendario
+
+    Cargar un Calendario al usuario previamente Cargado
+        /usuario/{idUsuario}/altacalendario
+
+    Consultar los Eventos del Calendario Previamente Cargado
+        /usuario/{idUsuario}/{idCalendario}/evento
+
+    Cargar un Evento al Calendario previamente Cargado
+        /usuario/{idUsuario}/{idCalendario}/altaevento
+
+/**
     Consultar los Eventos de Un Calendario
             http://localhost:8080/calendario/1/evento
+*/
+
 
     Consultar por fecha
             http://localhost:8080/evento/listadoFecha?fecha=10/01/2016
