@@ -17,7 +17,7 @@ public class CalendarioManejoDatosTest extends TestCase{
        /**
         *       TESTEO DEL METODO getidCalendario()
         * */
-       assertEquals(CalendarioManejoDatos.getCalendarioPorID(1).getidCalendario(), calendar1.getidCalendario());
+       assertEquals(CalendarioManejoDatos.getCalendario(1).getidCalendario(), calendar1.getidCalendario());
 
        /**
         *       TESTEO DEL METODO AltaCalendario()
@@ -29,17 +29,17 @@ public class CalendarioManejoDatosTest extends TestCase{
         /**
          *      CHEQUEAMOS CADA ATRIBUTO PARA CORROBORAR QUE EL ALTA FUNCIONO
          * */
-        assertEquals(CalendarioManejoDatos.getCalendarioPorID(2).getidCalendario(), aux.getidCalendario());
+        assertEquals(CalendarioManejoDatos.getCalendario(2).getidCalendario(), aux.getidCalendario());
 
-        assertEquals(CalendarioManejoDatos.getCalendarioPorID(2).getNombre(), aux.getNombre());
+        assertEquals(CalendarioManejoDatos.getCalendario(2).getNombre(), aux.getNombre());
 
-        assertEquals(CalendarioManejoDatos.getCalendarioPorID(2).getIdUsuario(), aux.getIdUsuario());
+        assertEquals(CalendarioManejoDatos.getCalendario(2).getIdUsuario(), aux.getIdUsuario());
 
 
         /**
          *      TEST DEL METODO bajaCalendario()
          * */
-        Calendario calendarioAux = CalendarioManejoDatos.getCalendarioPorID(2);
+        Calendario calendarioAux = CalendarioManejoDatos.getCalendario(2);
         CalendarioManejoDatos.bajaCalendario(2);
 
         /**
@@ -47,14 +47,14 @@ public class CalendarioManejoDatosTest extends TestCase{
          *      COMO EXTRA COMPROBAMOS QUE EL METODO getListaCalendarios()
          *      FUNCIONA CORRECTAMENTE
          * */
-        assertTrue(!CalendarioManejoDatos.getListaCalendario().contains(calendarioAux));
+        assertTrue(!CalendarioManejoDatos.getListaCalendarios().contains(calendarioAux));
 
         /**
          *      TEST DEL METODO modificarCalendario()
          * */
         CalendarioManejoDatos.modificarCalendario(1, "LAB2APROBADO");
 
-        assertEquals(CalendarioManejoDatos.getCalendarioPorID(1).getNombre(), "LAB2APROBADO");
+        assertEquals(CalendarioManejoDatos.getCalendario(1).getNombre(), "LAB2APROBADO");
 
 
 

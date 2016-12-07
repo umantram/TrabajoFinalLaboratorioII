@@ -47,5 +47,9 @@ public class CalendarioTest extends TestCase {
          * */
         assertEquals(calendario1.getIdUsuario(), new Integer(1));
 
+
+
+
+
     }
 }

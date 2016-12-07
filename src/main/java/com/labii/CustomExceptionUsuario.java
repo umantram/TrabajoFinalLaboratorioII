@@ -1,4 +1,4 @@
-package Exception;
+package com.labii;
 
 /**
  * Created by francomoglia on 11/30/16.

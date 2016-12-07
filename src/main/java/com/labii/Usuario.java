@@ -1,31 +1,18 @@
 package com.labii;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by umantram on 27/11/16.
  */
 
 
-/**
- * Esta clase contiene los datos para la creacion de un Usuario
- */
-
 public class Usuario {
 
-    /**
-     *Atributos de tipo private para Cumplir con el Encapsulamiento
-     *private (Acceso solo dentro de la clase)
-     */
     private int idUsuario=0;
     private String nombre;
     private String email;
 
-    /**
-     * Contructor Parametrizado
-     */
+    //private Map<Integer, Calendario> calendarios = new HashMap<Integer, Calendario>();
+
     public Usuario(int idUsaurio, String nombre, String email) {
 
         this.idUsuario = idUsaurio;
@@ -33,18 +20,10 @@ public class Usuario {
         this.email = email;
     }
 
-    /**
-     * Constructor Vacio para el funcionamiento del POST, con SpringBoot
-     */
     public Usuario(){
 
     }
 
-    /**
-     *
-     Getters y Setter de los Atributos de la Clase
-     *
-     */
     public int getIdUsuario() {
         return idUsuario;
     }

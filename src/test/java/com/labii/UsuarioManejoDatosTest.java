@@ -40,14 +40,14 @@ public class UsuarioManejoDatosTest extends TestCase{
         Usuario aux = UsuarioManejoDatos.getUsuario(2);
         UsuarioManejoDatos.bajaUsuario(2);
 
-        assertTrue(!UsuarioManejoDatos.getListaUsuario().contains(aux));
+        assertTrue(!UsuarioManejoDatos.getUsuarios().contains(aux));
 
         //assertTrue(UsuarioManejoDatos.getUsuario(2) == null);
 
         /**
          *      COMPROBAMOS EL METODO modifUsuario()
          * */
-        UsuarioManejoDatos.modificarUsuario(1, "umantram@no-reply.com");
+        UsuarioManejoDatos.modifUsuario(1, "umantram@no-reply.com");
 
         assertEquals(UsuarioManejoDatos.getUsuario(1).getEmail(), "umantram@no-reply.com");
 
